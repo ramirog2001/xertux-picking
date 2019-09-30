@@ -1,12 +1,14 @@
-Violeta: #9e5abf
 
+ //login
 Gradient: #3a0088 - #8b1bbf
 otro Gradient: #9e5abf - #ffffff
 
 Boton Ingresar: #ce65fd
 
+//app
 Rojo: #fe0000
 Verde: #00ff43
 Amarillo: #fff001
+Violeta: #9e5abf
 
 BackGround: #f6f6f6

@@ -14,40 +14,40 @@ import Login from './Componentes/Login/Login'
 import {ScreenOrientation} from 'expo'
 
 
-export default class App extends React.Componen {
+export default class App extends React.Component {
 
-  Auth = (AuthLevel) => {
-    switch (AuthLevel) {
-      case 'Admininstrador':
+  // Auth = (AuthLevel) => {
+  //   switch (AuthLevel) {
+  //     case 'Admininstrador':
         
-        break;
+  //       break;
 
-      case 'ArmadoPedidos':
+  //     case 'ArmadoPedidos':
         
-        break;
+  //       break;
 
-      case 'ArmadoCarro':
+  //     case 'ArmadoCarro':
         
-        break;
+  //       break;
 
-      case 'Despacho':
+  //     case 'Despacho':
         
-        break;
+  //       break;
     
-      default:
-        return(<Text>Login</Text>)
-        break;
-    }
-  }
+  //     default:
+  //       return(<Text>Login</Text>)
 
-  AuthLevel = 'login';
+  //   }
+  // }
+
+  // AuthLevel = 'login';
 
   
   render () {
     return (
       <View style={styles.container}>
 
-      <Auth AuthLevel />
+        <Login />
 
     </View>
     )
