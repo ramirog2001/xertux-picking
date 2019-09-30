@@ -6,6 +6,9 @@ import {createAppContainer,createSwitchNavigator} from 'react-navigation'
 import {createStackNavigator} from 'react-navigation-stack'
 import {createDrawerNavigator} from 'react-navigation-drawer'
 
+//Componentes
+import Login from './Componentes/Login/Login'
+
 
 export default class App extends React.Componen {
 
@@ -46,6 +49,9 @@ export default class App extends React.Componen {
     )
   }
 }
+
+
+
 
 const styles = StyleSheet.create({
   container: {
