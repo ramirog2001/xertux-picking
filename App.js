@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { StyleSheet, Text, View, Switch } from 'react-native';
+import { StyleSheet, Text, View, Switch,ActivityIndicator,StatusBar } from 'react-native';
 
 //React Navigation
 import {createAppContainer,createSwitchNavigator} from 'react-navigation'
@@ -19,18 +19,51 @@ export default class App extends Component {
   }
 }
 
+class Home extends Component {
+  render(){
+    return (
+      <Text style={{marginTop: StatusBar.currentHeight}}>Home</Text>
+    )
+  }
+}
+
+class AuthLoading extends Component{
+
+  componentDidMount(){
+    const userToken = false;
+    this.props.navigation.navigate(userToken ? 'App' : 'Auth');
+  }
+
+  render(){
+    return(
+      <View>
+        <ActivityIndicator />
+        <StatusBar barStyle="default" />
+      </View>
+    )
+  }
+}
+
 
 
 const DrawerNavigation = createDrawerNavigator({
-  Login:{
-    screen: Login
-  }
+    Home: {
+      screen: Home
+    }  
 });
 
 const SwitchLogin = createSwitchNavigator({
-  Login:{
-    screen: Login
+  AuthLoading: {
+    screen: AuthLoading
+  },
+  App: {
+    screen: DrawerNavigation
+  },
+  Auth:{
+   screen: Login 
   }
+},{
+  initialRouteName: 'AuthLoading'
 })
 
 const MyApp = createAppContainer(SwitchLogin);

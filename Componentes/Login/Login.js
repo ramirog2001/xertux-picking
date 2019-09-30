@@ -38,7 +38,8 @@ export default class Login extends Component {
                         />
                         <TouchableOpacity
                             style={{width:150,marginLeft:100,backgroundColor:'#ce65fd',alignSelf: 'center',borderRadius:20,elevation:6}}
-                        >
+                            onPress={()=> this.props.navigation.navigate('App')}
+>
                             <Text style={{textAlign:'center',color:'#fff',fontSize:20,padding: 5,}}>Ingresar</Text>
                         </TouchableOpacity>
                     </View>
