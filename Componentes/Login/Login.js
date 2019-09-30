@@ -23,7 +23,8 @@ export default class Login extends Component {
                     <LinearGradient
                         colors={['#9e5abf', '#ffffff']}
                         style={{ padding: 15, alignItems: 'center',width: '100%',height:'100%',alignItems: 'center',justifyContent:'center',borderBottomLeftRadius: 8,borderTopLeftRadius: 8,}}>
-                 </LinearGradient>  
+                            {/* To Do - agregar imagen de XertuX Picking */}
+                    </LinearGradient>  
                     </View>
                     <View style={{width:'50%',flexDirection: 'row',flexWrap:'wrap',alignItems: 'center'}}>
                         <Text style={{width:'100%',fontSize:24,textAlign:'center',padding:30,color:'#767676'}}>LOG IN</Text>
