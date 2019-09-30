@@ -19,6 +19,14 @@ export default class App extends Component {
   }
 }
 
+class Home extends Component {
+  render(){
+    return (
+      <Text>Home</Text>
+    )
+  }
+}
+
 
 const DrawerNavigation = createDrawerNavigator({
   Login:{
