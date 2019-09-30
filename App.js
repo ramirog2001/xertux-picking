@@ -10,6 +10,10 @@ import {createDrawerNavigator} from 'react-navigation-drawer'
 import Login from './Componentes/Login/Login'
 
 
+//Expo packages
+import {ScreenOrientation} from 'expo'
+
+
 export default class App extends React.Componen {
 
   Auth = (AuthLevel) => {
