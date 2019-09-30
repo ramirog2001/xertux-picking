@@ -26,7 +26,7 @@ export default class Login extends Component {
                  </LinearGradient>  
                     </View>
                     <View style={{width:'50%',flexDirection: 'row',flexWrap:'wrap',alignItems: 'center'}}>
-                        <Text style={{width:'100%',fontSize:24,textAlign:'center',padding:30}}>Log In</Text>
+                        <Text style={{width:'100%',fontSize:24,textAlign:'center',padding:30,color:'#767676'}}>LOG IN</Text>
                         <TextInput
                             placeholder="Ingrese su Usuario"
                             style={{width:'80%',marginLeft: 30,borderRadius:30,borderWidth: 1,padding: 10,borderColor: '#ce65fd',}}
@@ -36,7 +36,7 @@ export default class Login extends Component {
                             style={{width:'80%',marginTop:30,marginLeft: 30,borderRadius:30,borderWidth: 1,padding: 10,borderColor: '#ce65fd',}}
                         />
                         <TouchableOpacity
-                            style={{width:150,marginLeft:100,backgroundColor:'#ce65fd',alignSelf: 'center',borderRadius:20}}
+                            style={{width:150,marginLeft:100,backgroundColor:'#ce65fd',alignSelf: 'center',borderRadius:20,elevation:6}}
                         >
                             <Text style={{textAlign:'center',color:'#fff',fontSize:20,padding: 5,}}>Ingresar</Text>
                         </TouchableOpacity>
