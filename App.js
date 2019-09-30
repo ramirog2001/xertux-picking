@@ -1,7 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View, Switch } from 'react-native';
 
-export default function App() {
+//React Navigation
+import {createAppContainer,createSwitchNavigator} from 'react-navigation'
+import {createStackNavigator} from 'react-navigation-stack'
+import {createDrawerNavigator} from 'react-navigation-drawer'
+
+
+export default class App extends React.Componen {
 
   Auth = (AuthLevel) => {
     switch (AuthLevel) {
@@ -29,13 +35,16 @@ export default function App() {
 
   AuthLevel = 'login';
 
-  return (
-    <View style={styles.container}>
+  
+  render () {
+    return (
+      <View style={styles.container}>
 
       <Auth AuthLevel />
 
     </View>
-  );
+    )
+  }
 }
 
 const styles = StyleSheet.create({
