@@ -22,7 +22,7 @@ export default class App extends Component {
 class Home extends Component {
   render(){
     return (
-      <Text style={{marginTop: StatusBar.currentHeight}}>Home</Text>
+      <Text style={{marginTop: StatusBar.currentHeight}}>Administrar Usuarios</Text>
     )
   }
 }
@@ -47,9 +47,9 @@ class AuthLoading extends Component{
 
 
 const DrawerNavigation = createDrawerNavigator({
-    Home: {
+    Usuarios: {
       screen: Home
-    }  
+    }
 });
 
 const SwitchLogin = createSwitchNavigator({
