@@ -11,7 +11,7 @@ import {createDrawerNavigator} from 'react-navigation-drawer'
 import {ScreenOrientation} from 'expo'
 
 
-export default class App extends React.Componen {
+export default class App extends React.Component {
 
   Auth = (AuthLevel) => {
     switch (AuthLevel) {
@@ -37,14 +37,14 @@ export default class App extends React.Componen {
     }
   }
 
-  AuthLevel = 'login';
-
+  
   
   render () {
+    AuthLevel = 'login';
     return (
       <View style={styles.container}>
 
-      <Auth AuthLevel />
+      <this.Auth AuthLevel />
 
     </View>
     )
