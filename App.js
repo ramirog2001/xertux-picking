@@ -1,52 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View, Switch } from 'react-native';
-
-//React Navigation
-import {createAppContainer,createSwitchNavigator} from 'react-navigation'
-import {createStackNavigator} from 'react-navigation-stack'
-import {createDrawerNavigator} from 'react-navigation-drawer'
-
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
 
 //Expo packages
-import {ScreenOrientation} from 'expo'
 
+//components
+import Main from './Componentes/Main/Main'
 
 export default class App extends React.Component {
 
-  Auth = (AuthLevel) => {
-    switch (AuthLevel) {
-      case 'Admininstrador':
-        
-        break;
-
-      case 'ArmadoPedidos':
-        
-        break;
-
-      case 'ArmadoCarro':
-        
-        break;
-
-      case 'Despacho':
-        
-        break;
-    
-      default:
-        return(<Text>Login</Text>)
-        break;
-    }
-  }
 
   
   
   render () {
-    AuthLevel = 'login';
+    AuthLevel = 'Administrador';
     return (
       <View style={styles.container}>
+        <StatusBar hidden />
 
-      <this.Auth AuthLevel />
+        <Main />
 
-    </View>
+      </View>
     )
   }
 }
