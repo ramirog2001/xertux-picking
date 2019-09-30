@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Component} from 'react';
 import { StyleSheet, Text, View, Switch } from 'react-native';
 
 //React Navigation
@@ -10,50 +10,29 @@ import {createDrawerNavigator} from 'react-navigation-drawer'
 import Login from './Componentes/Login/Login'
 
 
-//Expo packages
-import {ScreenOrientation} from 'expo'
+export default class App extends Component {
 
-
-export default class App extends React.Component {
-
-  // Auth = (AuthLevel) => {
-  //   switch (AuthLevel) {
-  //     case 'Admininstrador':
-        
-  //       break;
-
-  //     case 'ArmadoPedidos':
-        
-  //       break;
-
-  //     case 'ArmadoCarro':
-        
-  //       break;
-
-  //     case 'Despacho':
-        
-  //       break;
-    
-  //     default:
-  //       return(<Text>Login</Text>)
-
-  //   }
-  // }
-
-  // AuthLevel = 'login';
-
-  
   render () {
     return (
-      <View style={styles.container}>
-
-        <Login />
-
-    </View>
-    )
+        <MyApp/>     
+    );
   }
 }
 
+
+const DrawerNavigation = createDrawerNavigator({
+  Login:{
+    screen: Login
+  }
+});
+
+const SwitchLogin = createSwitchNavigator({
+  Login:{
+    screen: Login
+  }
+})
+
+const MyApp = createAppContainer(SwitchLogin);
 
 
 
@@ -65,3 +44,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
