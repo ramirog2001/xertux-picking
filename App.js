@@ -1,10 +1,39 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Switch } from 'react-native';
 
 export default function App() {
+
+  Auth = (AuthLevel) => {
+    switch (AuthLevel) {
+      case 'Admininstrador':
+        
+        break;
+
+      case 'ArmadoPedidos':
+        
+        break;
+
+      case 'ArmadoCarro':
+        
+        break;
+
+      case 'Despacho':
+        
+        break;
+    
+      default:
+        return(<Text>Login</Text>)
+        break;
+    }
+  }
+
+  AuthLevel = 'login';
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+
+      <Auth AuthLevel />
+
     </View>
   );
 }
