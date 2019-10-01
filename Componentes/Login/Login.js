@@ -15,6 +15,7 @@ export default class Login extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <StatusBar hidden />
                 <LinearGradient
           colors={['#3a0088', '#8b1bbf']}
           style={{ padding: 15, alignItems: 'center',width: '100%',height:'100%',alignItems: 'center',justifyContent:'center'}}>
@@ -57,7 +58,6 @@ export default class Login extends Component {
          flex:1,
          width:'100%',
          height: '100%',
-         marginTop: StatusBar.currentHeight ,
      },
      card:{
         width:'90%',
