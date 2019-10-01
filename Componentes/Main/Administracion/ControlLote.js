@@ -1,8 +1,13 @@
 import React from 'react';
 import { Text } from "react-native";
-const ControlLote = () => {
+import Buttons from '../Buttons';
+
+const ControlLote = (props) => {
     return (
-        <Text>Pestaña ControlLote</Text>
+        <>
+            <Buttons navigation = {props.navigation}/>
+            <Text>ControlLote</Text>
+        </>
     );
 };
 

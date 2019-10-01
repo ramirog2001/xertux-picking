@@ -1,18 +1,15 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
+import Buttons from '../Buttons';
 
-const RegistrarLote = () => {
+const RegistrarLote = (props) => {
 
-    console.log('Si');
 
     return (
-        <View style={{flex:1}}>
-
-            <Text>
-                Registrar Lote
-            </Text>
-
-        </View>
+        <>
+            <Buttons navigation = {props.navigation}/>
+            <Text>RegistrarLote</Text>
+        </>
     );
 };
 
