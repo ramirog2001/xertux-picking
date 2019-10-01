@@ -17,7 +17,7 @@ export default class Login extends Component {
             <View style={styles.container}>
                 <StatusBar hidden />
                 <LinearGradient
-          colors={['#3a0088', '#8b1bbf']}
+          colors={['#3a0088','#7e03b4','#8b1bbf']}
           style={{ padding: 15, alignItems: 'center',width: '100%',height:'100%',alignItems: 'center',justifyContent:'center'}}>
                 <View style={styles.card}>
                     <View style={{width:'50%',}}>
@@ -38,7 +38,7 @@ export default class Login extends Component {
                             style={{width:'80%',marginTop:30,marginLeft: 30,borderRadius:30,borderWidth: 1,padding: 10,borderColor: '#ce65fd',}}
                         />
                         <TouchableOpacity
-                            style={{width:150,marginLeft:100,backgroundColor:'#ce65fd',alignSelf: 'center',borderRadius:20,elevation:6}}
+                            style={{width:'40%',marginLeft:100,backgroundColor:'#ce65fd',alignSelf: 'center',borderRadius:20,elevation:6}}
                             onPress={()=> this.props.navigation.navigate('App')}
 >
                             <Text style={{textAlign:'center',color:'#fff',fontSize:20,padding: 5,}}>Ingresar</Text>
@@ -61,7 +61,7 @@ export default class Login extends Component {
      },
      card:{
         width:'90%',
-        height:'80%',
+        height:'85%',
         backgroundColor:'#fff',
         borderRadius: 8,
         elevation: 7,
