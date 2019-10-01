@@ -35,6 +35,7 @@ class Lote extends Component {
   }
 }
 
+//AUTORIZACION
 class AuthLoading extends Component{
 
   componentDidMount(){
@@ -51,7 +52,7 @@ class AuthLoading extends Component{
     )
   }
 }
-
+//END OF AUTORIZACION
 
 
 const DrawerNavigation = createDrawerNavigator({
