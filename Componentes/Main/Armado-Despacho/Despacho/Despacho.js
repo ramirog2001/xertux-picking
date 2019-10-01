@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
-import Buttons from '../Buttons';
+import Buttons from '../../Buttons';
 
 const Despacho = (props) => {
     return (
