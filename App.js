@@ -10,6 +10,8 @@ import {createDrawerNavigator} from 'react-navigation-drawer'
 import Login from './Componentes/Login/Login'
 
 
+//components
+import Main from './Componentes/Main/Main'
 
 export default class App extends Component {
 
