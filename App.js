@@ -9,6 +9,7 @@ import {createDrawerNavigator} from 'react-navigation-drawer'
 //Componentes
 import Login from './Componentes/Login/Login'
 import Main from './Componentes/Main/Main'
+import Logout from './Componentes/Logout/Logout'
 
 
 export default class App extends Component {
@@ -20,20 +21,20 @@ export default class App extends Component {
   }
 }
 
-class Home extends Component {
-  render(){
-    return (
-      <Text style={{marginTop: StatusBar.currentHeight}}>Administrar Usuarios</Text>
-    )
-  }
-}
-class Lote extends Component {
-  render(){
-    return (
-      <Text style={{marginTop: StatusBar.currentHeight}}>Administrar Lote</Text>
-    )
-  }
-}
+// class Home extends Component {
+//   render(){
+//     return (
+//       <Text style={{marginTop: StatusBar.currentHeight}}>Administrar Usuarios</Text>
+//     )
+//   }
+// }
+// class Lote extends Component {
+//   render(){
+//     return (
+//       <Text style={{marginTop: StatusBar.currentHeight}}>Administrar Lote</Text>
+//     )
+//   }
+// }
 
 //AUTORIZACION
 class AuthLoading extends Component{
@@ -56,11 +57,11 @@ class AuthLoading extends Component{
 
 
 const DrawerNavigation = createDrawerNavigator({
-    Usuarios: {
-      screen: Home
+    Home: {
+      screen: Main
     },
-    RegistrarLote:{
-      screen: Lote
+    Logout:{
+      screen: Logout
     }
 });
 
@@ -69,7 +70,7 @@ const SwitchLogin = createSwitchNavigator({
     screen: AuthLoading
   },
   App: {
-    screen: Main
+    screen: DrawerNavigation
   },
   Auth:{
    screen: Login 
