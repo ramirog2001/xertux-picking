@@ -27,6 +27,13 @@ class Home extends Component {
     )
   }
 }
+class Lote extends Component {
+  render(){
+    return (
+      <Text style={{marginTop: StatusBar.currentHeight}}>Administrar Lote</Text>
+    )
+  }
+}
 
 class AuthLoading extends Component{
 
@@ -50,6 +57,9 @@ class AuthLoading extends Component{
 const DrawerNavigation = createDrawerNavigator({
     Usuarios: {
       screen: Home
+    },
+    RegistrarLote:{
+      screen: Lote
     }
 });
 
