@@ -11,8 +11,19 @@ export default class Despacho extends Component{
         super(props);
 
         this.state = {
-            lotes: []
+            lotes: [
+                {numeroRemito:'090930242',transporte: 7,cliente:'Cliente 1'},
+                {numeroRemito:'543252352',transporte: 6,cliente:'Cliente 2'},
+                {numeroRemito:'76576376',transporte: 6,cliente:'Cliente 2'},
+                {numeroRemito:'5432543265',transporte: 6,cliente:'Cliente 5'},
+                {numeroRemito:'124246345',transporte: 7,cliente:'Cliente 8'},
+                
+            ]
         }
+    }
+
+    despacharLote = () => {
+    
     }
 
     render(){
@@ -21,13 +32,17 @@ export default class Despacho extends Component{
         <Buttons navigation = {this.props.navigation}/>
         <View style={styles.container}>
             <ScrollView>
-                <DespachoItem/>
-                <DespachoItem/>
-                <DespachoItem/>
-                <DespachoItem/>
+                {
+                    this.state.lotes.map(item => (
+                        <DespachoItem item={item}
+                            key={item.numeroRemito}
+                        />
+                    ))
+                }
             </ScrollView>
             <TouchableOpacity style={{position:'absolute',top:'80%',left:'42%',width:140,borderRadius: 100,height:50,backgroundColor:'#9e5abf',elevation:7}}
                 activeOpacity={.9}
+                onPress={this.despacharLote}
             >
                 <Text style={{color:'#fff',fontSize:18,textAlign:'center',padding: 10,}}>Despachar</Text>
             </TouchableOpacity>
