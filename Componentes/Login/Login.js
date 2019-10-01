@@ -8,7 +8,6 @@ import {
     TouchableOpacity
 }   from 'react-native'
 
-
 import {LinearGradient} from 'expo-linear-gradient'
 
 export default class Login extends Component {
