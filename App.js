@@ -1,55 +1,85 @@
-import React from 'react';
-import { StyleSheet, Text, View, Switch } from 'react-native';
+import React,{Component} from 'react';
+import { StyleSheet, Text, View, Switch,ActivityIndicator,StatusBar } from 'react-native';
 
 //React Navigation
 import {createAppContainer,createSwitchNavigator} from 'react-navigation'
 import {createStackNavigator} from 'react-navigation-stack'
 import {createDrawerNavigator} from 'react-navigation-drawer'
 
+//Componentes
+import Login from './Componentes/Login/Login'
 
-//Expo packages
-import {ScreenOrientation} from 'expo'
 
 
-export default class App extends React.Component {
+export default class App extends Component {
 
-  Auth = (AuthLevel) => {
-    switch (AuthLevel) {
-      case 'Admininstrador':
-        
-        break;
-
-      case 'ArmadoPedidos':
-        
-        break;
-
-      case 'ArmadoCarro':
-        
-        break;
-
-      case 'Despacho':
-        
-        break;
-    
-      default:
-        return(<Text>Login</Text>)
-        break;
-    }
-  }
-
-  
-  
   render () {
-    AuthLevel = 'login';
     return (
-      <View style={styles.container}>
+        <MyApp/>     
+    );
+  }
+}
 
-      <this.Auth AuthLevel />
-
-    </View>
+class Home extends Component {
+  render(){
+    return (
+      <Text style={{marginTop: StatusBar.currentHeight}}>Administrar Usuarios</Text>
     )
   }
 }
+class Lote extends Component {
+  render(){
+    return (
+      <Text style={{marginTop: StatusBar.currentHeight}}>Administrar Lote</Text>
+    )
+  }
+}
+
+class AuthLoading extends Component{
+
+  componentDidMount(){
+    const userToken = false;
+    this.props.navigation.navigate(userToken ? 'App' : 'Auth');
+  }
+
+  render(){
+    return(
+      <View>
+        <ActivityIndicator />
+        <StatusBar barStyle="default" />
+      </View>
+    )
+  }
+}
+
+
+
+const DrawerNavigation = createDrawerNavigator({
+    Usuarios: {
+      screen: Home
+    },
+    RegistrarLote:{
+      screen: Lote
+    }
+});
+
+const SwitchLogin = createSwitchNavigator({
+  AuthLoading: {
+    screen: AuthLoading
+  },
+  App: {
+    screen: DrawerNavigation
+  },
+  Auth:{
+   screen: Login 
+  }
+},{
+  initialRouteName: 'AuthLoading'
+})
+
+const MyApp = createAppContainer(SwitchLogin);
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -59,3 +89,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
