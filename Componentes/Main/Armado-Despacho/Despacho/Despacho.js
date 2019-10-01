@@ -6,6 +6,15 @@ import Buttons from '../../Buttons';
 import DespachoItem from './DespachoItem'
 
 export default class Despacho extends Component{
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+            lotes: []
+        }
+    }
+
     render(){
     return (
         <>
