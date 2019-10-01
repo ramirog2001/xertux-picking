@@ -17,6 +17,7 @@ export default class Despacho extends Component{
                 {numeroRemito:'76576376',transporte: 6,cliente:'Cliente 2'},
                 {numeroRemito:'5432543265',transporte: 6,cliente:'Cliente 5'},
                 {numeroRemito:'124246345',transporte: 7,cliente:'Cliente 8'},
+                {numeroRemito:'651562456',transporte: 8,cliente:'Cliente 10'},
                 
             ]
         }
