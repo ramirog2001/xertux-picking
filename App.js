@@ -8,10 +8,8 @@ import {createDrawerNavigator} from 'react-navigation-drawer'
 
 //Componentes
 import Login from './Componentes/Login/Login'
-
-
-//components
 import Main from './Componentes/Main/Main'
+
 
 export default class App extends Component {
 
@@ -71,7 +69,7 @@ const SwitchLogin = createSwitchNavigator({
     screen: AuthLoading
   },
   App: {
-    screen: DrawerNavigation
+    screen: Main
   },
   Auth:{
    screen: Login 
