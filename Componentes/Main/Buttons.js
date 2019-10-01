@@ -4,7 +4,7 @@ import { Button } from 'react-native-elements';
 
 const Buttons = ({navigation}) => {
     return (
-        <View style={{width: '100%', backgroundColor: '#9e5abf', flexDirection: 'row', borderTopWidth: 1}}>
+        <View style={{width: '100%', backgroundColor: '#9e5abf', flexDirection: 'row', borderTopWidth: 1,borderColor: '#F5F5F5',}}>
                 <ScrollView horizontal>
                     <Button onPress = {() => navigation.navigate('RegistrarLote')} title='Registrar Lote' buttonStyle={{backgroundColor:'#9e5abf'}}/>
                     <Button onPress = {() => navigation.navigate('ControlLote')} title='Control de Lotes' buttonStyle={{backgroundColor:'#9e5abf'}}/>

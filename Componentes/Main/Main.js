@@ -9,8 +9,8 @@ const Administrador = () => {
         <View style={{flex: 1, width: '100%'}}>
             <StatusBar hidden/>
             <NavigationBar 
-                navigationBarStyle={{backgroundColor:'#9e5abf'}}
-                componentLeft = {() => <Image source={require('../../Images/Untitled.png')} style={{height:'100%'}} resizeMode='contain' />}
+                navigationBarStyle={{backgroundColor:'#9e5abf',padding: 5,}}
+                componentLeft = {() => <Image source={require('../../Images/Untitled.png')} style={{height:'100%',width:120,}}  resizeMode='center'/>}
             />
             <NavigationMaster />
         </View>
