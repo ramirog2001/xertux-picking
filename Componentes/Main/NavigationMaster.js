@@ -8,7 +8,7 @@ import Informes from './Administracion/Informes';
 import Usuarios from './Administracion/Usuarios';
 
 import ArmadoCarro from './Armado-Despacho/ArmadoCarro';
-import ArmadoPedido from './Armado-Despacho/ArmadoPedido';
+import ArmadoPedido from './Armado-Despacho/ArmadoPedido/ArmadoPedido';
 import Despacho from './Armado-Despacho/Despacho'
 
 
@@ -21,6 +21,9 @@ const root = createSwitchNavigator({
     ArmadoCarro,
     ArmadoPedido,
     Despacho
+},
+{
+    initialRouteName: 'ArmadoPedido'
 })
 
 export default createAppContainer(root);
