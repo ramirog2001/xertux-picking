@@ -248,32 +248,29 @@ export default class ControlLote extends Component{
                                       }
                         
                                 >
+
                                     {
                                         lote.Remito.map(remito => (
-                                            <DropDownItem
-                                                key={remito.NroRemito}
-                                                contentVisible={false}
-                                                invisibleImage="ios-arrow-back"
-                                                visibleImage="ios-arrow-down"
-                                                header={
-                                                    <View style={{flexDirection:'row',width:'95%',paddingVertical:5}}>
-                                                        <View style={{width:'10%'}}>
-                                                            <Image
-                                                                source={require('../../../../Images/deleted.png')}
-                                                            />
-                                                        </View>
-                                                        <View style={{width:'90%'}}>
-
-                                                        </View>
-
-                                                    </View>
-
-                                                }
-                                            >
-                                                <Text>Texto</Text>
-                                            </DropDownItem>
+                                            <TouchableOpacity style={{width:'100%',flexDirection: 'row',padding: 10,}} key={remito.NroRemito}>
+                                               <View style={{width:'10%',flexDirection: 'row',flexWrap:'wrap'}}>
+                                               <Image
+                                                source={require('../../../../Images/deleted.png')}
+                                                style={{width:30,height:30}}
+                                               />
+                                               </View>
+                                               <View style={{width:'40%',flexDirection: 'row',flexWrap:'wrap'}}>
+                                               <Text style={{width:'100%'}}>Numero de Remito</Text>
+                                               <Text style={{width:'100%'}}>{remito.NroRemito}</Text>
+                                               </View>
+                                               <View style={{width:'50%'}}>
+                                                   <TouchableOpacity style={{backgroundColor:'#9e5abf',width:'50%',height:40,alignSelf:'center',borderRadius:50}}>
+                                                   <Text style={{color:'#fff',textAlign:'center',padding: 8,}}>Ver Productos</Text>
+                                                   </TouchableOpacity>
+                                               </View>
+                                            </TouchableOpacity> 
                                         ))
                                     }
+                    
                                 </DropDownItem>
                             ))
                         }
