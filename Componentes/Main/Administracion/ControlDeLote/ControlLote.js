@@ -1,8 +1,10 @@
 import React,{Component} from 'react';
-import { Text,View,StatusBar,StyleSheet,TouchableOpacity,ScrollView,Image } from "react-native";
+import { Text,View,StatusBar,StyleSheet,TouchableOpacity,ScrollView,Image,Modal,Alert} from "react-native";
 import Buttons from '../../Buttons';
 
 import DropDownItem from 'react-native-drop-down-item';
+
+import RemitoModal from './RemitoModal'
 
 
 export default class ControlLote extends Component{
@@ -11,6 +13,7 @@ export default class ControlLote extends Component{
         super(props);
 
         this.state = {
+            modalVisible: false,
             lotes: [{
                 NroLote: 'L25',
                 FechaAlt: '2019-09-27 14:00:00.00',
@@ -37,7 +40,7 @@ export default class ControlLote extends Component{
                                 ArtCod: 'ab1235789',
                                 Desc: 'Un producto',
                                 FechaVen: '2019-09-27',
-                                Nserie: 'A102',
+                                Nserie: 'A106',
                                 Estado : 1
                             }
                         ]
@@ -57,7 +60,7 @@ export default class ControlLote extends Component{
                                 ArtCod: 'ab1235789',
                                 Desc: 'Un producto',
                                 FechaVen: '2019-09-27',
-                                Nserie: 'A102',
+                                Nserie: 'A107',
                                 Estado : 1
                             }
                         ]
@@ -111,7 +114,7 @@ export default class ControlLote extends Component{
                                 ArtCod: 'ab1235789',
                                 Desc: 'Un producto',
                                 FechaVen: '2019-09-27',
-                                Nserie: 'A102',
+                                Nserie: 'A101',
                                 Estado : 1
                             }
                         ]
@@ -145,7 +148,15 @@ export default class ControlLote extends Component{
                                 ArtCod: 'ab1235789',
                                 Desc: 'Un producto',
                                 FechaVen: '2019-09-27',
-                                Nserie: 'A102',
+                                Nserie: 'A105',
+                                Estado : 1
+                            },
+                            {
+                                TipPro: 'PVT',
+                                ArtCod: 'ab1235789',
+                                Desc: 'Un producto',
+                                FechaVen: '2019-09-27',
+                                Nserie: 'A198',
                                 Estado : 1
                             }
                         ]
@@ -165,7 +176,7 @@ export default class ControlLote extends Component{
                                 ArtCod: 'ab1235789',
                                 Desc: 'Un producto',
                                 FechaVen: '2019-09-27',
-                                Nserie: 'A102',
+                                Nserie: 'A1065',
                                 Estado : 1
                             }
                         ]
@@ -177,7 +188,10 @@ export default class ControlLote extends Component{
 
 
     }
-
+  
+    toggleModal(visible) {
+        this.setState({ modalVisible: visible });
+     }
 
     render(){
 
@@ -188,90 +202,10 @@ export default class ControlLote extends Component{
                     <ScrollView style={{alignSelf:'stretch'}}>
                         {
                             this.state.lotes.map(lote => (
-                                <DropDownItem
-                                    key={lote.NroLote}
-                                    contentVisible={false}
-                                    invisibleImage="ios-arrow-back"
-                                    visibleImage="ios-arrow-down"
-                                    underlineColor="#767676"
-                                    header={
-                                        <View style={{flexDirection:'row',width:'95%'}}>
-                                         {
-                                             lote.Prioridad === 1 ?
-                                             <View style={{width:'2%',backgroundColor:'red',height:'100%'}}></View>
-                                             :
-                                             <View style={{width:'2%',backgroundColor:'yellow',height:'100%'}}></View>
-                                         }
-                                          <View style={{width:'10%',flexDirection:'row',flexWrap:'wrap',paddingVertical:5}}>
-                                            <Text style={{fontSize:14,width:'100%',fontWeight:'bold',textAlign:'center'}}>Lote</Text>
-                                            <Text style={{fontSize:14,width:'100%',textAlign:'center'}}>{lote.NroLote}</Text>
-                                          </View>
-                                          <View style={{width:'10%',flexDirection:'row',flexWrap:'wrap',paddingVertical:5}}>
-                                            <Text style={{fontSize:14,width:'100%',fontWeight:'bold',textAlign:'center'}}>Fecha Alta</Text>
-                                            <Text style={{fontSize:14,width:'100%',textAlign:'center'}}>{lote.FechaAlt.slice(0,10)}</Text>
-                                          </View>
-                                          <View style={{width:'10%',flexDirection:'row',flexWrap:'wrap',paddingVertical:5}}>
-                                            <Text style={{fontSize:14,width:'100%',fontWeight:'bold',textAlign:'center'}}>Transporte</Text>
-                                            <Text style={{fontSize:14,width:'100%',textAlign:'center'}}>{lote.Transp}</Text>
-                                          </View>
-                                          <View style={{width:'10%',paddingVertical:5,flexDirection:'row',flexWrap:'wrap'}}>
-                                            <Text style={{fontSize:14,width:'100%',fontWeight:'bold',textAlign:'center'}}>Asignado a</Text>
-                                            <Text style={{fontSize:14,width:'100%',textAlign:'center'}}>{lote.Asignado}</Text>
-                                          </View>
-                                          <View style={{width:'21%',paddingVertical:5,flexDirection:'row',flexWrap:'wrap'}}>
-                                            <Text style={{fontSize:14,width:'100%',fontWeight:'bold',textAlign:'center'}}>Estado</Text>
-                                            <Text style={{fontSize:14,width:'100%',textAlign:'center'}}>{lote.Estado}</Text>
-                                          </View>
-                                          <View style={{width:'10%',paddingVertical:5,flexDirection:'row',flexWrap:'wrap'}}>
-                                          <Text style={{fontSize:14,width:'100%',fontWeight:'bold',textAlign:'center'}}>Proceso</Text>
-                                            <Text style={{fontSize:14,width:'100%',textAlign:'center'}}>50%</Text>
-                                          </View>
-                                          <View style={{width:'10%',paddingVertical:5,flexDirection:'row',flexWrap:'wrap'}}>
-                                            <Text style={{fontSize:14,width:'100%',fontWeight:'bold',textAlign:'center'}}>Prioridad</Text>
-                                            {
-                                                lote.Prioridad === 1 ? 
-                                                <Text style={{fontSize:14,width:'100%',textAlign:'center',color:'red'}}>Urgente</Text>
-                                                : 
-                                                <Text style={{fontSize:14,width:'100%',textAlign:'center',color:'green'}}>Normal</Text>
-                                            }      
-                                            
-                                          </View>
-
-
-                                          <View style={{width:'10%',flexDirection:'row'}}>
-                                            <TouchableOpacity style={{backgroundColor:'#9e5abf',width:'100%',height:'70%',alignSelf:'center',borderRadius:50}}>
-                                                <Text style={{color:'#fff',textAlign:'center',padding: 5,}}>Seguir</Text>
-                                            </TouchableOpacity>
-                                          </View>
-                                         
-                                        </View>
-                                      }
-                        
-                                >
-
-                                    {
-                                        lote.Remito.map(remito => (
-                                            <TouchableOpacity style={{width:'100%',flexDirection: 'row',padding: 10,}} key={remito.NroRemito}>
-                                               <View style={{width:'10%',flexDirection: 'row',flexWrap:'wrap'}}>
-                                               <Image
-                                                source={require('../../../../Images/deleted.png')}
-                                                style={{width:30,height:30}}
-                                               />
-                                               </View>
-                                               <View style={{width:'40%',flexDirection: 'row',flexWrap:'wrap'}}>
-                                               <Text style={{width:'100%'}}>Numero de Remito</Text>
-                                               <Text style={{width:'100%'}}>{remito.NroRemito}</Text>
-                                               </View>
-                                               <View style={{width:'50%'}}>
-                                                   <TouchableOpacity style={{backgroundColor:'#9e5abf',width:'50%',height:40,alignSelf:'center',borderRadius:50}}>
-                                                   <Text style={{color:'#fff',textAlign:'center',padding: 8,}}>Ver Productos</Text>
-                                                   </TouchableOpacity>
-                                               </View>
-                                            </TouchableOpacity> 
-                                        ))
-                                    }
-                    
-                                </DropDownItem>
+                               <RemitoModal
+                               key={lote.NroLote}
+                               lote={lote}
+                               />
                             ))
                         }
                     </ScrollView>
