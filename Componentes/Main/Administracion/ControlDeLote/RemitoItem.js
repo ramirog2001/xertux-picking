@@ -10,7 +10,8 @@ export default class RemitoItem extends Component {
         super(props);
 
         this.state  = {
-            isSelectedRemito: false
+            isSelectedRemito: false,
+            isOkey: false
         }
     }
     abrirRemitoxd = () => {
