@@ -10,7 +10,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
 class ArmadoPedido extends Component {
-    datos = [
+    datosLote = [
         {
             id: '1',
             nombre: 'Hola',
@@ -31,6 +31,47 @@ class ArmadoPedido extends Component {
         }
     ]
 
+    datosRemito = [
+        {
+            numero: "123456",
+            productos:[
+                {
+                    tipo: 'PTV',
+                    numero: "123456789",
+                    descripcion: 'REFENAX frasco x24',
+                    cantidad: 12,
+                    fvencimiento: '2019-12-18'
+                },
+                {
+                    tipo: 'PTV',
+                    numero: "45456798",
+                    descripcion: 'REFENAX pastillas x24',
+                    cantidad: 18,
+                    fvencimiento: '2021-12-18'
+                }
+            ]
+        },
+        {
+            numero: "22665588",
+            productos:[
+                {
+                    tipo: 'PTV',
+                    numero: "154859",
+                    descripcion: 'REFENAX frasco x24',
+                    cantidad: 12,
+                    fvencimiento: '2019-12-18'
+                },
+                {
+                    tipo: 'PTV',
+                    numero: "3068451",
+                    descripcion: 'REFENAX pastillas x24',
+                    cantidad: 18,
+                    fvencimiento: '2021-12-18'
+                }
+            ]
+        }
+    ]
+
     state = {
         expanded: false,
     }
@@ -39,25 +80,25 @@ class ArmadoPedido extends Component {
         this.setState({
             expanded: !this.state.expanded
         })
-        console.log('changeExpanded');
     }
 
     Drop = ({nombre, fecha, urgente, id}) => {
         if(id === '1')
         return(
             <View style = {{borderWidth: 1}}>
-                <TouchableOpacity onPressIn = {() => this.changeExpanded()}>  
+                <TouchableOpacity onPress = {() => this.changeExpanded()}>  
                     <ItemArmado nombre={nombre} fecha={fecha} urgente={urgente} id={id}/>
                     <View style={{position: "absolute", right: 15, top: 10}}>
                     <Ionicons name={this.state.expanded? 'ios-arrow-down' : 'ios-arrow-back'} size={32}/>
                     </View>
                     
                 </TouchableOpacity>
-                <View style={{borderWidth: this.state.expanded? 1 : 0, height: this.state.expanded? null : 0, overflow: "hidden"}}>
-                    <Remito />
-                </View>
-                <View style={{borderWidth: this.state.expanded? 1: 0, height: this.state.expanded? null : 0, overflow: "hidden"}}>
-                    <Remito />
+                <View style={{height: this.state.expanded? null: 0, overflow: "hidden"}}>
+                    <FlatList 
+                        data={this.datosRemito}
+                        renderItem = {({item}) => <Remito numero = {item.numero} productos = {item.productos}/>}
+                        keyExtractor = {item => item.numero}
+                    />
                 </View>
             </View>
         )
@@ -74,7 +115,7 @@ class ArmadoPedido extends Component {
             <View>
                 <Buttons navigation = {this.props.navigation}/>
                     <FlatList 
-                        data={this.datos}
+                        data={this.datosLote}
                         renderItem = {({item}) => <this.Drop nombre={item.nombre} fecha={item.fecha} urgente={item.urgente} id={item.id}/>}
                         keyExtractor = {item => item.id}
                         extraData = {this.state}

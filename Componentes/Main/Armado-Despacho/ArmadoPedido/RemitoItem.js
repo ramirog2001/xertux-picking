@@ -1,32 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Text, View } from 'react-native';
 import { Button } from 'react-native-elements'
-const RemitoItem = () => {
+const RemitoItem = ({tipo, numero, descripcion, cantidad, fvencimiento}) => {
+
+    const [bcolor, setbcolor] = useState('red');
+
     return (
         <View style={{flexDirection: "row"}}>
             <View style={{flex: 1}} />
             <View style={{flex: 1, margin: 5, alignItems: "center", justifyContent: "center"}}>
                 <Text style={{fontWeight: "bold"}}>Tipo del Producto</Text>
-                <Text>PTV</Text>
+                <Text>{tipo}</Text>
             </View>
             <View style={{flex: 1, margin: 5, alignItems: "center", justifyContent: "center"}}>
                 <Text style={{fontWeight: "bold"}}>Numero del producto</Text>
-                <Text style={{textAlign: "center", textAlignVertical: "center"}}>R0000000000000</Text>
+                <Text style={{textAlign: "center", textAlignVertical: "center"}}>{numero}</Text>
             </View>
             <View style={{flex: 1, margin: 5, alignItems: "center", justifyContent: "center"}}>
                 <Text style={{fontWeight: "bold"}}>Descripcion del producto</Text>
-                <Text>Descripcion</Text>
+                <Text>{descripcion}</Text>
             </View>
             <View style={{flex: 1, margin: 5, alignItems: "center", justifyContent: "center"}}>
                 <Text style={{fontWeight: "bold"}}>Cantidad</Text>
-                <Text>99</Text>
+                <Text>{cantidad}</Text>
             </View>
             <View style={{flex: 1, margin: 5, alignItems: "center", justifyContent: "center"}}>
                 <Text style={{fontWeight: "bold"}}>Fecha de Vencimiento</Text>
-                <Text>2019-09-19</Text>
+                <Text>{fvencimiento}</Text>
             </View>
             <View style={{flex: 1, margin: 5, alignItems: "center", justifyContent: "center", marginTop:20}}>
-                <Button title=' ' buttonStyle={{width: '100%', borderRadius: 25, backgroundColor: "green"}}/>
+                <Button title=' ' onPress={() => setbcolor('green')} buttonStyle={{width: '100%', borderRadius: 25, backgroundColor: bcolor}}/>
             </View>
         </View>
     );
