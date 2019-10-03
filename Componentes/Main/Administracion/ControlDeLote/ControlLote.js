@@ -61,7 +61,7 @@ export default class ControlLote extends Component{
                                 Desc: 'Un producto',
                                 FechaVen: '2019-09-27',
                                 Nserie: 'A107',
-                                Estado : 1
+                                Estado: 1
                             }
                         ]
                     }
@@ -193,6 +193,7 @@ export default class ControlLote extends Component{
         this.setState({ modalVisible: visible });
      }
 
+     
     render(){
 
         return (
