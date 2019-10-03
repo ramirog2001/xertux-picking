@@ -18,7 +18,7 @@ const ItemArmado = ({nombre, fecha, urgente, id}) => {
             <View style={{width: '5%', borderRightWidth: 1 , backgroundColor: urgente ? 'red': 'yellow'  }} />
             <View style={{flexDirection: "row", paddingVertical: 5, flex: 1}}>
                 <View style={{flex: 1}}>
-                    <Text style={{textAlign: "center"}}>
+                    <Text style={{fontWeight: "bold", textAlign: "center"}}>
                         Lote
                     </Text>
                     <Text style={{textAlign: "center"}}>
@@ -26,7 +26,7 @@ const ItemArmado = ({nombre, fecha, urgente, id}) => {
                     </Text>
                 </View>
                 <View style={{flex: 1}}>
-                    <Text style={{textAlign: "center"}}>
+                    <Text style={{fontWeight: "bold", textAlign: "center"}}>
                         Fecha alta
                     </Text>
                     <Text style={{textAlign: "center"}}>
@@ -45,7 +45,7 @@ const ItemArmado = ({nombre, fecha, urgente, id}) => {
                     />
                 
                 <View style={{flex: 1}}>
-                    <Text style={{textAlign: "center"}}>
+                    <Text style={{fontWeight: "bold", textAlign: "center"}}>
                         Prioridad
                     </Text>
                     <Text style={{textAlign: "center"}}>
