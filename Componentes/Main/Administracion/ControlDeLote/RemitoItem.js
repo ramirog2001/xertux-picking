@@ -52,7 +52,7 @@ export default class RemitoItem extends Component {
                             </TouchableOpacity>
             </View>
         </TouchableOpacity>
-        <View style={{width:'100%',flexDirection:'row',flexWrap:'wrap',overflow:'hidden',}}>
+        <View style={{width:'100%',flexDirection:'row',flexWrap:'wrap',overflow:'hidden',}} onPress={this.abrirRemitoxd}>
                 {
                     this.state.isSelectedRemito ?
                     this.props.remito.Producto.map(producto => (
