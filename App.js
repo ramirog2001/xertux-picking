@@ -21,21 +21,6 @@ export default class App extends Component {
   }
 }
 
-// class Home extends Component {
-//   render(){
-//     return (
-//       <Text style={{marginTop: StatusBar.currentHeight}}>Administrar Usuarios</Text>
-//     )
-//   }
-// }
-// class Lote extends Component {
-//   render(){
-//     return (
-//       <Text style={{marginTop: StatusBar.currentHeight}}>Administrar Lote</Text>
-//     )
-//   }
-// }
-
 //AUTORIZACION
 class AuthLoading extends Component{
 
@@ -76,7 +61,7 @@ const SwitchLogin = createSwitchNavigator({
    screen: Login 
   }
 },{
-  initialRouteName: 'AuthLoading'
+  initialRouteName: 'App'
 })
 
 const MyApp = createAppContainer(SwitchLogin);

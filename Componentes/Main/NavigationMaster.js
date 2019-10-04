@@ -5,7 +5,7 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import RegistrarLote from './Administracion/RegistroLotes/RegistrarLote';
 import ControlLote from './Administracion/ControlLote';
 import Informes from './Administracion/Informes';
-import Usuarios from './Administracion/Usuarios';
+import Usuarios from './Administracion/Usuarios/Usuarios';
 
 import ArmadoCarro from './Armado-Despacho/ArmadoCarro';
 import ArmadoPedido from './Armado-Despacho/ArmadoPedido';
@@ -21,6 +21,9 @@ const root = createSwitchNavigator({
     ArmadoCarro,
     ArmadoPedido,
     Despacho
+},
+{
+    initialRouteName: 'Usuarios'
 })
 
 export default createAppContainer(root);
