@@ -11,8 +11,6 @@ import ArmadoCarro from './Armado-Despacho/ArmadoDeCarro/ArmadoCarro';
 import ArmadoPedido from './Armado-Despacho/ArmadoPedido/ArmadoPedido';
 import Despacho from './Armado-Despacho/Despacho/Despacho'
 
-
-
 const root = createSwitchNavigator({
     RegistrarLote,
     ControlLote,
