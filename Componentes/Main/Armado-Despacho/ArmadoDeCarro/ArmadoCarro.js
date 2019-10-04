@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Text } from 'react-native';
 import Buttons from '../Buttons';
 
-const ArmadoCarro = (props) => {
+class ArmadoCarro extends Component {
+    render(){
     return (
         <>
-        <Buttons navigation = {props.navigation}/>
+        <Buttons navigation = {this.props.navigation}/>
         <Text>
             ArmadoCarro
         </Text>
         </>
     );
+    }
 };
 
 export default ArmadoCarro;
