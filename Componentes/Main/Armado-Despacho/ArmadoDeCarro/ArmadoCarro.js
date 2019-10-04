@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
-import Buttons from '../Buttons';
+import Buttons from '../../Buttons';
 
 export default class ArmadoCarro extends Component {
     render(){
