@@ -26,7 +26,7 @@ export default class RemitoModal extends Component {
     render() {
         return (
             <>
-            <View style={{flexDirection:'row',width:'100%',flexWrap:'wrap'}}>
+            <View style={{flexDirection:'row',width:'100%',flexWrap:'wrap',borderBottomWidth:.5,borderColor:'#767676'}}>
                                          {
                                              this.props.lote.Prioridad === 1 ?
                                              <View style={{width:'2%',backgroundColor:'red',height:'100%'}}></View>

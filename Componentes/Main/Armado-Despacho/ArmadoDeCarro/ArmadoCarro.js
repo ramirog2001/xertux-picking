@@ -1,19 +1,14 @@
-import React,{Component} from 'react';
-import { Text,View,StatusBar,StyleSheet,TouchableOpacity,ScrollView,Image,Modal,Alert} from "react-native";
+import React, { Component } from 'react';
+import { Text, View, StyleSheet,ScrollView } from 'react-native';
 import Buttons from '../../Buttons';
 
-import DropDownItem from 'react-native-drop-down-item';
+import LoteArmadoDeCarro from './LoteArmadoDeCarro'
 
-import RemitoModal from './RemitoModal'
-
-
-export default class ControlLote extends Component{
+export default class ArmadoCarro extends Component {
 
     constructor(props){
         super(props);
-
         this.state = {
-            modalVisible: false,
             lotes: [{
                 NroLote: 'L25',
                 FechaAlt: '2019-09-27 14:00:00.00',
@@ -185,36 +180,32 @@ export default class ControlLote extends Component{
 
             }]
         }
-
-
     }
-  
- 
-     
-    render(){
 
-        return (
-            <>
-                <Buttons navigation = {this.props.navigation}/>
-                <View style={styles.container}>
-                    <ScrollView style={{alignSelf:'stretch'}}>
-                        {
-                            this.state.lotes.map(lote => (
-                               <RemitoModal
-                               key={lote.NroLote}
-                               lote={lote}
-                               />
-                            ))
-                        }
-                    </ScrollView>
-                </View>
-            </>
-        );
+    render(){
+    return (
+        <>
+        <Buttons navigation = {this.props.navigation}/>
+            <View style={style.container}>
+                <ScrollView style={{alignSelf:'stretch'}}>
+                    {
+                        this.state.lotes.map(lote => (
+                            <LoteArmadoDeCarro 
+                                key={lote.NroLote}
+                                remito={lote.Remito}
+                                lote={lote}
+                            />
+                        ))
+                    }   
+                </ScrollView>
+            </View>
+        </>
+    );
     }
 };
 
 
-const styles = StyleSheet.create({
+const style = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#f6f6f6'
