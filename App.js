@@ -61,7 +61,7 @@ const SwitchLogin = createSwitchNavigator({
    screen: Login 
   }
 },{
-  initialRouteName: 'Auth'
+  initialRouteName: 'AuthLoading'
 })
 
 const MyApp = createAppContainer(SwitchLogin);
