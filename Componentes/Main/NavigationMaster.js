@@ -2,8 +2,8 @@ import React from 'react';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
 //import paginas
-import RegistrarLote from './Administracion/RegistroLotes/RegistrarLote';
-import ControlLote from './Administracion/ControlLote';
+import RegistrarLote from './Administracion/RegistrarLote';
+import ControlLote from './Administracion/ControlDeLote/ControlLote';
 import Informes from './Administracion/Informes';
 import Usuarios from './Administracion/Usuarios/Usuarios';
 
