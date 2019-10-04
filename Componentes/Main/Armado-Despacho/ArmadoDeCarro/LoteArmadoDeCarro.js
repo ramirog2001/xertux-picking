@@ -29,7 +29,7 @@ export default class LoteArmadoDeCarro extends Component {
      
         return (
             <>
-           <View style={{width:'100%',flexWrap:'wrap',flexDirection:'row'}}>
+           <View style={{width:'100%',flexWrap:'wrap',flexDirection:'row',borderBottomWidth:.5,borderColor:'#767676'}}>
                                          {
                                              this.props.lote.Prioridad === 1 ?
                                              <View style={{width:'2%',backgroundColor:'red',height:'100%'}}></View>

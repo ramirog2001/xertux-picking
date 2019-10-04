@@ -40,14 +40,11 @@ export default  class Producto extends Component {
                             <Text style={{width:'100%',textAlign:'center',fontSize:14,fontWeight:'bold'}}>Cantidad</Text>
                             <Text style={{width:'100%',textAlign:'center'}}>10</Text>
                             </View>
-                            <View style={{width:'10%',paddingHorizontal:5}}>
+                            <View style={{width:'20%',paddingHorizontal:5}}>
                             <Text style={{width:'100%',textAlign:'center',fontSize:14,fontWeight:'bold'}}>Fecha Vencimiento</Text>
                             <Text style={{width:'100%',textAlign:'center'}}>{this.props.producto.FechaVen}</Text>
                             </View>
-                            <View style={{width:'10%',paddingHorizontal:5}}>
-                            <Text style={{width:'100%',textAlign:'center',fontSize:14,fontWeight:'bold'}}>Nseries</Text>
-                            <Text style={{width:'100%',textAlign:'center'}}>{this.props.producto.Nserie}</Text>
-                            </View>
+                           
                             <View style={{width:'10%',justifyContent:'center'}}>
                             <TouchableOpacity style={{width:40,borderRadius:10,backgroundColor:this.props.producto.Estado === 1 ? 'green' : 'red',height:20,alignSelf:'center',elevation:5}}
                                 onPress={this.handleClick}
