@@ -16,7 +16,7 @@ export default class App extends Component {
 
   render () {
     return (
-      <Main />
+      <MyApp/>
     );
   }
 }
@@ -61,7 +61,7 @@ const SwitchLogin = createSwitchNavigator({
    screen: Login 
   }
 },{
-  initialRouteName: 'App'
+  initialRouteName: 'Auth'
 })
 
 const MyApp = createAppContainer(SwitchLogin);
