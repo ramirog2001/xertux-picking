@@ -11,7 +11,8 @@ class RegistrarLote extends Component {
     state = {
         nroRemitos: [
         ],
-        text: ''
+        text: '',
+        endPressed: true,
     }
 
     aniadirDatos = () => {
@@ -21,9 +22,16 @@ class RegistrarLote extends Component {
         this.setState({
             datos: aux
         });
-        this.setState({text: ''});
     }
 
+    _handleEnd = () => {
+        if(this.state.text != ''){
+        this.aniadirDatos();
+        this.setState({endPressed: false})
+        this.setState({text: ''});
+        this.nro.focus()
+    }
+    }
     render() {
 
 
@@ -40,7 +48,7 @@ class RegistrarLote extends Component {
                 extraData = {this.state}
                 />
                 
-                <TextInput keyboardType="numeric" placeholder='nroRemito' value={this.state.text} onChangeText = {(texto) => this.setState({text: texto})} returnKeyType='done' onSubmitEditing={this.aniadirDatos}/>
+                <TextInput onEndEditing = {() => {this.state.endPressed? this._handleEnd(): null}} keyboardType="numeric" placeholder='nroRemito' value={this.state.text} onChangeText = {(texto) => this.setState({text: texto})} returnKeyType='done' onSubmitEditing={() => this.setState({endPressed: true})} autoFocus={true} ref = {(ref) => this.nro = ref} />
             
             </View>
             <View style={{flexDirection: "row"}}>
@@ -53,7 +61,7 @@ class RegistrarLote extends Component {
                         <Text style={{textAlign:'center',color:'#fff', }}>Crear Lote</Text>
                     </TouchableOpacity>
                     
-                    <TouchableOpacity style={{padding: 5, width: 100, borderWidth: 1,backgroundColor:'#ce65fd', borderRadius:20,elevation:6}}>
+                    <TouchableOpacity onPress = {() => this.setState({nroRemitos: []})} style={{padding: 5, width: 100, borderWidth: 1,backgroundColor:'#ce65fd', borderRadius:20,elevation:6}}>
                             <Text style={{textAlign:'center',color:'#fff', }}>Limpiar</Text>
                     </TouchableOpacity>
                 </View>
