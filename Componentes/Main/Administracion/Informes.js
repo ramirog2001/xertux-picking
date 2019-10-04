@@ -6,8 +6,8 @@ const Informes = (props) => {
     return (
         <>
         <Buttons navigation = {props.navigation}/>
-        <Text>
-            Informes
+        <Text style={{alignSelf:'center', justifyContent:'center',flex:1}}>
+            Comming Soon
         </Text>
         </>
     );
