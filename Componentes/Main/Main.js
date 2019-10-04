@@ -5,7 +5,6 @@ import { NavigationBar } from 'navigationbar-react-native';
 import Buttons from './Buttons';
 import NavigationMaster from './NavigationMaster';
 
-
 const Administrador = () => {
     return (
         <View style={{flex: 1, width: '100%'}}>
