@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text } from 'react-native';
 import Buttons from '../Buttons';
 
-class ArmadoCarro extends Component {
+export default class ArmadoCarro extends Component {
     render(){
     return (
         <>
@@ -14,5 +14,3 @@ class ArmadoCarro extends Component {
     );
     }
 };
-
-export default ArmadoCarro;
