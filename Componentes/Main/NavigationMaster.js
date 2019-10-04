@@ -7,7 +7,7 @@ import ControlLote from './Administracion/ControlDeLote/ControlLote';
 import Informes from './Administracion/Informes';
 import Usuarios from './Administracion/Usuarios';
 
-import ArmadoCarro from './Armado-Despacho/ArmadoCarro';
+import ArmadoCarro from './Armado-Despacho/ArmadoDeCarro/ArmadoCarro';
 import ArmadoPedido from './Armado-Despacho/ArmadoPedido';
 import Despacho from './Armado-Despacho/Despacho'
 
