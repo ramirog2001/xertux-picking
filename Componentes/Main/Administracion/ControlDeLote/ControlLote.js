@@ -189,10 +189,7 @@ export default class ControlLote extends Component{
 
     }
   
-    toggleModal(visible) {
-        this.setState({ modalVisible: visible });
-     }
-
+ 
      
     render(){
 
