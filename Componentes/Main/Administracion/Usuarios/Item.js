@@ -3,40 +3,43 @@ import { Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const Items = () => {
+const Items = ({Usuario, Nombre, Email, Roles}) => {
+
+    console.log(Usuario);
+
     return (
         <>
         <View style={{flexDirection: 'row', widht: '100%', borderWidth: 1, height: 50}}>
             <View style={{flex: 1}}>
-                <Text>
+                <Text numberOfLines = {1}>
                     Usuario
                 </Text>
-                <Text>
-                    Usuario
+                <Text numberOfLines = {1}>
+                    {Usuario}
                 </Text>
             </View>
             <View style={{flex: 1}}>
-                <Text>
+                <Text numberOfLines = {1}>
                     Nombre
                 </Text>
-                <Text>
-                    Nombre
+                <Text numberOfLines = {1}>
+                    {Nombre}
                 </Text>
             </View>
             <View style={{flex: 1}}>
-                <Text>
+                <Text numberOfLines = {1}>
                     Email
                 </Text>
-                <Text>
-                    Email
+                <Text numberOfLines = {1}>
+                    {Email}
                 </Text>
             </View>
             <View style={{flex: 1}}>
-                <Text>
+                <Text numberOfLines = {1}>
                     Roles
                 </Text>
-                <Text>
-                    Roles
+                <Text numberOfLines = {1}>
+                    {Roles}
                 </Text>
             </View>
             <View style={{flex: 2, flexDirection: "row", justifyContent: "center", alignItems: "stretch"}}>

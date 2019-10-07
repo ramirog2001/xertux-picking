@@ -11,8 +11,10 @@ const Administrador = () => {
             <StatusBar hidden/>
             <NavigationBar 
                 navigationBarStyle={{backgroundColor:'#9e5abf',padding: 5,}}
-                componentLeft = {() => <Image source={require('../../Images/Untitled.png')}
-                                        style={{height:'100%',width:120,}}  resizeMode='center'/>}
+                componentLeft = {() => <Image source={require('../../Images/Recurso2mdpi.png')}
+                                            style={{height:'100%',width:120,}}  resizeMode='center'/>}
+                componentCenter = {() => <Image source={require('../../Images/Recurso1mdpi.png')} 
+                                            style={{height: '100%', width: 300, marginLeft: '10%'}} resizeMode='center'/>}
             />
             <NavigationMaster />
         </View>

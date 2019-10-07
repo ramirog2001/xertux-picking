@@ -12,13 +12,13 @@ import ArmadoPedido from './Armado-Despacho/ArmadoPedido/ArmadoPedido';
 import Despacho from './Armado-Despacho/Despacho/Despacho'
 
 const root = createSwitchNavigator({
+    ArmadoPedido,
     RegistrarLote,
     ControlLote,
     Usuarios,
     Informes,
     ArmadoCarro,
-    ArmadoPedido,
-    Despacho
+    Despacho,
 })
 
 export default createAppContainer(root);

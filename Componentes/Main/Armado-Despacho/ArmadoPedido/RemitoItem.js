@@ -1,9 +1,19 @@
 import React, {useState} from 'react';
 import { Text, View } from 'react-native';
 import { Button } from 'react-native-elements'
-const RemitoItem = ({tipo, numero, descripcion, cantidad, fvencimiento}) => {
+const RemitoItem = ({tipo, numero, descripcion, cantidad, fvencimiento, counter}) => {
 
     const [bcolor, setbcolor] = useState('red');
+
+    const handlePress = () => {
+        if(bcolor === 'red'){
+        setbcolor('green')
+        counter(true);}
+        else{
+            setbcolor('red')
+            counter(false)
+        }
+    }
 
     return (
         <View style={{flexDirection: "row"}}>
@@ -29,7 +39,7 @@ const RemitoItem = ({tipo, numero, descripcion, cantidad, fvencimiento}) => {
                 <Text>{fvencimiento}</Text>
             </View>
             <View style={{flex: 1, margin: 5, alignItems: "center", justifyContent: "center", marginTop:20}}>
-                <Button title=' ' onPress={() => setbcolor('green')} buttonStyle={{width: '100%', borderRadius: 25, backgroundColor: bcolor}}/>
+                <Button title=' ' onPress={() => handlePress()} buttonStyle={{width: '100%', borderRadius: 25, backgroundColor: bcolor}}/>
             </View>
         </View>
     );
