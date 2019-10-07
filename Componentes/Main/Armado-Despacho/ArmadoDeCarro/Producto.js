@@ -20,7 +20,6 @@ export default  class Producto extends Component {
 
 
     render() {
-        console.log(this.props);
         
         return (
             <View  style={{width:'100%',padding:15,flexWrap:'wrap',flexDirection:'row',alignItems:'stretch',borderBottomColor: "#767676",borderBottomWidth:.5,borderTopColor: "#767676",borderTopWidth:.5}}>
