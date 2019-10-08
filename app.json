@@ -24,10 +24,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.xertux.picking"
     },
     "android": {
-      "package": "com.Xertux.picking"
+      "package": "com.xertux.picking"
     }
 
     
