@@ -7,30 +7,35 @@ import Item from './Item';
 const Usuarios = (props) => {
     data = [
         {
+            id:'1',
             Usuario: 'Default_User',
             Nombre: 'Jhon Ramirez',
             Email: 'jramirez@gmail.com',
             Roles: 'Admin',
         },
         {
+            id:'2',
             Usuario: 'Default_User',
             Nombre: 'Jhon Ramirez',
             Email: 'jramirez@gmail.com',
             Roles: 'Admin',
         },
         {
+            id:"3",
             Usuario: 'Default_User',
             Nombre: 'Jhon Ramirez',
             Email: 'jramirez@gmail.com',
             Roles: 'Admin',
         },
         {
+            id:"4",
             Usuario: 'Default_User',
             Nombre: 'Jhon Ramirez',
             Email: 'jramirez@gmail.com',
             Roles: 'Admin',
         },
         {
+            id:"5",
             Usuario: 'Default_User',
             Nombre: 'Jhon Ramirez',
             Email: 'jramirez@gmail.com',
@@ -44,6 +49,7 @@ const Usuarios = (props) => {
                 <FlatList 
                     data= {data}
                     renderItem = {({item}) => <Item Usuario = {item.Usuario} Nombre = {item.Nombre} Email = {item.Email} Roles = {item.Roles} />}
+                    keyExtractor={(item)=>item.id}
                 />
             </ScrollView>
                 <TouchableOpacity
