@@ -7,8 +7,6 @@ import { getPermissions } from '../../Redux/store'
 
 const Buttons = ({navigation}) => {
     const permissions = getPermissions();
-    console.log('inButtons');
-    console.log(permissions);
     return (
         <View style={{width: '100%', backgroundColor: '#9e5abf', flexDirection: 'row', borderTopWidth: 1,borderColor: '#F5F5F5',}}>
                 <ScrollView horizontal>

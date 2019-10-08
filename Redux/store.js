@@ -10,7 +10,6 @@ const store = createStore(myReducer);
 
 
 function myReducer(state = initState, action) {
-    console.log(action);
     switch (action.type) {
         case 'USER_PERMISSIONS':
             return{
@@ -30,10 +29,6 @@ function myReducer(state = initState, action) {
     }
  }
 
-store.subscribe(() => {
-    console.log('state updated');
-    console.log(store.getState());
-})
 
 export let setPermissions = (userPermission) => { 
     const permissions = {type: 'USER_PERMISSIONS', userPermission}

@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet,ScrollView } from 'react-native';
 import Buttons from '../../Buttons';
 
+
+
 import LoteArmadoDeCarro from './LoteArmadoDeCarro'
 
 export default class ArmadoCarro extends Component {
+
 
     constructor(props){
         super(props);
@@ -183,6 +186,7 @@ export default class ArmadoCarro extends Component {
     }
 
     render(){
+        
     return (
         <>
         <Buttons navigation = {this.props.navigation}/>
