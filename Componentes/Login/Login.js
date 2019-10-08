@@ -5,7 +5,8 @@ import {
     StatusBar,
     StyleSheet,
     TextInput,
-    TouchableOpacity
+    TouchableOpacity,
+    Image
 }   from 'react-native'
 
 import {LinearGradient} from 'expo-linear-gradient'
@@ -23,7 +24,7 @@ export default class Login extends Component {
                     <LinearGradient
                         colors={['#9e5abf', '#ffffff']}
                         style={{ padding: 15, alignItems: 'center',width: '100%',height:'100%',alignItems: 'center',justifyContent:'center',borderBottomLeftRadius: 8,borderTopLeftRadius: 8,}}>
-                            {/* To Do - agregar imagen de XertuX Picking */}
+                        <Image source={require('../../Images/Recurso1mdpi.png')} style={{width: '100%', height: '100%', resizeMode: "center"}}/>
                     </LinearGradient>  
                     </View>
                     <View style={{width:'50%',flexDirection: 'row',flexWrap:'wrap',alignItems: 'center'}}>
