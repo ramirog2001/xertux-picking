@@ -76,7 +76,7 @@ export default class RemitoModal extends Component {
                                           </View>
 
                                           <View style={{width:'10%',flexDirection:'row'}}>
-                                            <TouchableOpacity style={{width:'100%',marginLeft:20,alignSelf:'center'}} onPress={this.abrirRemito}>
+                                            <TouchableOpacity style={{width:'100%',marginLeft:10,alignSelf:'center'}} onPress={this.abrirRemito}>
                                                 
                                                 {
                                                     this.state.isSelected ?

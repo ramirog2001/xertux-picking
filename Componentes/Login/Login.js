@@ -11,7 +11,20 @@ import {
 
 import {LinearGradient} from 'expo-linear-gradient'
 
+import { setPermissions, getPermissions } from '../../Redux/store';
+
 export default class Login extends Component {
+
+    state = {
+        text: ''
+    }
+
+    authCheck = () => {
+        setPermissions(this.state.text)
+        if(this.state.text === 'admin' || this.state.text === 'armadocarro')
+            this.props.navigation.navigate('Main');
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -32,6 +45,7 @@ export default class Login extends Component {
                         <TextInput
                             placeholder="Ingrese su Usuario"
                             style={{width:'80%',marginLeft: 30,borderRadius:30,borderWidth: 1,padding: 10,borderColor: '#ce65fd',}}
+                            onChangeText={(text) => this.setState({text})}
                         />
                         <TextInput
                             placeholder="Ingrese su Clave"
@@ -39,7 +53,7 @@ export default class Login extends Component {
                         />
                         <TouchableOpacity
                             style={{width:'40%',marginLeft:100,backgroundColor:'#ce65fd',alignSelf: 'center',borderRadius:20,elevation:6}}
-                            onPress={()=> this.props.navigation.navigate('App')}
+                            onPress={this.authCheck}
 >
                             <Text style={{textAlign:'center',color:'#fff',fontSize:20,padding: 5,}}>Ingresar</Text>
                         </TouchableOpacity>

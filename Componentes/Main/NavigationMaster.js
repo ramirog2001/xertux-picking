@@ -7,18 +7,27 @@ import ControlLote from './Administracion/ControlDeLote/ControlLote';
 import Informes from './Administracion/Informes';
 import Usuarios from './Administracion/Usuarios/Usuarios';
 
-import ArmadoCarro from './Armado-Despacho/ArmadoDeCarro/ArmadoCarro';
+import ArmadoCarroScreen from './Armado-Despacho/ArmadoDeCarro/ArmadoCarro';
 import ArmadoPedido from './Armado-Despacho/ArmadoPedido/ArmadoPedido';
 import Despacho from './Armado-Despacho/Despacho/Despacho'
 
-const root = createSwitchNavigator({
+import { getPermissions } from '../../Redux/store'
+
+console.log(getPermissions);
+
+const armadoCarroView = createSwitchNavigator({
+
+    ArmadoCarroScreen,
     ArmadoPedido,
+    Despacho,
+
+})
+
+const adminView = createSwitchNavigator({
     RegistrarLote,
     ControlLote,
     Usuarios,
     Informes,
-    ArmadoCarro,
-    Despacho,
 })
-
-export default createAppContainer(root);
+export let Admin = createAppContainer(adminView);
+export let ArmadoCarro = createAppContainer(armadoCarroView);
