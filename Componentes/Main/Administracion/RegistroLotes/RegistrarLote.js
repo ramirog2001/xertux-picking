@@ -47,8 +47,10 @@ class RegistrarLote extends Component {
                 keyExtractor = {(item) => item}
                 extraData = {this.state}
                 />
-                
-                <TextInput onEndEditing = {() => {this.state.endPressed? this._handleEnd(): null}} keyboardType="numeric" placeholder='nroRemito' value={this.state.text} onChangeText = {(texto) => this.setState({text: texto})} returnKeyType='done' onSubmitEditing={() => this.setState({endPressed: true})} autoFocus={true} ref = {(ref) => this.nro = ref} />
+                    
+                <TextInput 
+                style={{paddingLeft:10,paddingBottom:10}}
+                onEndEditing = {() => {this.state.endPressed? this._handleEnd(): null}} keyboardType="numeric" placeholder='nroRemito' value={this.state.text} onChangeText = {(texto) => this.setState({text: texto})} returnKeyType='done' onSubmitEditing={() => this.setState({endPressed: true})} autoFocus={true} ref = {(ref) => this.nro = ref} />
             
             </View>
             <View style={{flexDirection: "row"}}>
