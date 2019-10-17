@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const Items = ({Usuario, Nombre, Email, Roles}) => {
+const Items = ({Usuario, Nombre, Email, Roles, Modificar, Delete}) => {
 
     console.log(Usuario);
 
@@ -41,20 +41,32 @@ const Items = ({Usuario, Nombre, Email, Roles}) => {
                 <Text numberOfLines = {1}>
                     {Roles}
                 </Text>
+                
             </View>
-            <View style={{flex: 2, flexDirection: "row", justifyContent: "center", alignItems: "stretch"}}>
-                <TouchableOpacity
+            <TouchableOpacity
+                    onPress = {() => Modificar(id)}
                     style={{padding: 5, width: 100, margin: 5, borderWidth: 1,backgroundColor:'#ce65fd', borderRadius:20,elevation:6}}>
                         <Text style={{textAlign:'center',color:'#fff', marginVertical: 5,}}>Modificar</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
+                    onPress = {() => Delete(id)}
                     style={{padding: 5, width: 100, margin: 5, borderWidth: 1,backgroundColor:'#ce65fd', borderRadius:20,elevation:6}}>
                         <Text style={{textAlign:'center',color:'#fff', marginVertical: 5,}}>Eliminar</Text>
                 </TouchableOpacity>
             </View>
-        </View>
         </>
             );
         };
         
         export default Items;
+
+
+
+        @@ -3,7 +3,13 @@ import { Text, View } from 'react-native';
+import { Button } from 'react-native-elements';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+
+<<<<<<< Updated upstream
+const Items = () => {
+=======
+const Items = ({Usuario, Nombre, Email, Roles, Delete, id, Modificar, Anadir}) => {
