@@ -11,6 +11,20 @@ import {
 import {LinearGradient} from 'expo-linear-gradient'
 
 export default class Login extends Component {
+<<<<<<< Updated upstream
+=======
+
+    state = {
+        text: 'admin'
+    }
+
+    authCheck = () => {
+        setPermissions(this.state.text)
+        if(this.state.text === 'admin' || this.state.text === 'armadocarro')
+            this.props.navigation.navigate('Main');
+    }
+
+>>>>>>> Stashed changes
     render() {
         return (
             <View style={styles.container}>

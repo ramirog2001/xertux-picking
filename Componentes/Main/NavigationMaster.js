@@ -13,10 +13,22 @@ import Despacho from './Armado-Despacho/Despacho'
 
 
 
+<<<<<<< Updated upstream
 const root = createSwitchNavigator({
+=======
+const armadoCarroView = createSwitchNavigator({
+
+    ArmadoCarroScreen,
+    ArmadoPedido,
+    Despacho,
+
+})
+
+const adminView = createSwitchNavigator({
+    Usuarios,
+>>>>>>> Stashed changes
     RegistrarLote,
     ControlLote,
-    Usuarios,
     Informes,
     ArmadoCarro,
     ArmadoPedido,
