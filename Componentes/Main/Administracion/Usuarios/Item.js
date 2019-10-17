@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import { Button } from 'react-native-elements';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const Items = ({Usuario, Nombre, Email, Roles, Modificar, Delete}) => {
+const Items = ({Usuario, Nombre, Email, Roles, Modificar, Delete, id}) => {
 
     console.log(Usuario);
 
@@ -61,12 +61,3 @@ const Items = ({Usuario, Nombre, Email, Roles, Modificar, Delete}) => {
         export default Items;
 
 
-
-        @@ -3,7 +3,13 @@ import { Text, View } from 'react-native';
-import { Button } from 'react-native-elements';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-
-<<<<<<< Updated upstream
-const Items = () => {
-=======
-const Items = ({Usuario, Nombre, Email, Roles, Delete, id, Modificar, Anadir}) => {
