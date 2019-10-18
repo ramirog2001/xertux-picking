@@ -3,6 +3,7 @@ import { Text, View, Image, ScrollView ,StatusBar} from 'react-native';
 import { Button } from 'react-native-elements';
 import { NavigationBar } from 'navigationbar-react-native';
 import Buttons from './Buttons';
+import Notificaciones from './Notificaciones';
 import { ArmadoCarro, Admin} from './NavigationMaster';
 
 import { getPermissions } from '../../Redux/store'
@@ -16,6 +17,7 @@ const Administrador = () => {
                 navigationBarStyle={{backgroundColor:'#9e5abf',padding: 5,}}
                 componentLeft = {() => <Image source={require('../../Images/Recurso2mdpi.png')}
                                             style={{height:'100%',width:120,}}  resizeMode='center'/>}
+                componentRight = {()=> <Notificaciones/>}
             />
             {   
                 user === 'admin'?
