@@ -5,8 +5,6 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Items = ({Usuario, Nombre, Email, Roles, Modificar, Delete, id}) => {
 
-    console.log(Usuario);
-
     return (
         <>
         <View style={{flexDirection: 'row', widht: '100%', borderWidth: 1, height: 50}}>

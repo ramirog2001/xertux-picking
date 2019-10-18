@@ -13,7 +13,6 @@ import Despacho from './Armado-Despacho/Despacho/Despacho'
 
 import { getPermissions } from '../../Redux/store'
 
-console.log(getPermissions);
 
 const armadoCarroView = createSwitchNavigator({
 
