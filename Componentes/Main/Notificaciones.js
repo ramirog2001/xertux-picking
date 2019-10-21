@@ -11,20 +11,19 @@ class Notificaciones extends Component {
 
     render() {
         return (
-            <View style={{width:'100%',flexDirection: 'row', justifyContent:'center',flexWrap:'wrap', backgroundColor:'red'}}>
-              <View style={{width:'50%'}}>
+            <View style={{width:'80%',flexDirection: 'row', justifyContent:'flex-end',flexWrap:'wrap'}}>
+           
                 <Ionicons
                     name="ios-notifications"
-                    style={{}}
-                    size={30}
+                    style={{padding: 10,}}
+                    size={26}
                 />
-              </View>
-              <View style={{width:'50%'}}>
                 <Ionicons
                     name="ios-person"
-                    size={30}
+                    size={34}
+                    style={{marginRight: 25,padding: 8, borderRadius: 7, backgroundColor: '#c0c0c0'}}
                 />
-              </View>
+      
             </View>
         );
     }
