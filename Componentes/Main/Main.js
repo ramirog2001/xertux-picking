@@ -19,7 +19,7 @@ class Administrador extends Component {
 
     handleNotifications = () => {
         this.setState({
-            notificaciones: this.state.notificaciones++
+            notificaciones: this.state.notificaciones+1
         })
     }
 
