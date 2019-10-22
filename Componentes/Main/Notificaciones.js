@@ -6,22 +6,36 @@ import { Avatar, Badge, Icon, withBadge } from 'react-native-elements'
 
 class Notificaciones extends Component {
 
+    constructor(props){
+        super(props);
 
+        this.state = {
+            notifications: 0
+        }
+    }
+
+    
  
 
     render() {
+        const {notifications} = this.props;
+        const BadgedIcon = withBadge(notifications)(Icon)
+
         return (
             <View style={{width:'80%',flexDirection: 'row', justifyContent:'flex-end',flexWrap:'wrap'}}>
            
-                <Ionicons
+                {/* <Ionicons
                     name="ios-notifications"
                     style={{padding: 10,}}
                     size={26}
+                /> */}
+                <BadgedIcon type="ionicon" name="ios-chatbubbles"
+                color="#fff" 
                 />
                 <Ionicons
                     name="ios-person"
                     size={34}
-                    style={{marginRight: 25,padding: 8, borderRadius: 7, backgroundColor: '#c0c0c0'}}
+                    style={{marginLeft:30,marginRight: 25,paddingHorizontal: 15,paddingVertical: 5, borderRadius: 14, backgroundColor: '#999999'}}
                 />
       
             </View>
