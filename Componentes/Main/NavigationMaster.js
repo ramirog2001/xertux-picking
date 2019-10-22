@@ -29,5 +29,9 @@ const adminView = createSwitchNavigator({
     ControlLote,
     Informes,
 })
+
+console.log(Admin);
+
+
 export let Admin = createAppContainer(adminView);
 export let ArmadoCarro = createAppContainer(armadoCarroView);
