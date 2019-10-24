@@ -15,10 +15,10 @@ import { getPermissions } from '../../Redux/store'
 
 
 const armadoCarroView = createSwitchNavigator({
-
+    
+    Despacho,
     ArmadoCarroScreen,
     ArmadoPedido,
-    Despacho,
 
 })
 const adminView = createSwitchNavigator({
