@@ -16,7 +16,7 @@ import { setPermissions, getPermissions } from '../../Redux/store';
 export default class Login extends Component {
 
     state = {
-        text: 'admin'
+        text: 'armadocarro'
     }
 
     authCheck = () => {
