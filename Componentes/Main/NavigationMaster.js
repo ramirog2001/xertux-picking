@@ -21,7 +21,6 @@ const armadoCarroView = createSwitchNavigator({
     Despacho,
 
 })
-
 const adminView = createSwitchNavigator({
     Usuarios,
     RegistrarLote,
