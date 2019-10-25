@@ -7,12 +7,14 @@ import {getNotification} from '../../Redux/store'
 
 import {connect} from 'react-redux'
 
+
+
 class Notificaciones extends Component {
 
-   
-    
-    
-    
+
+
+
+
     render() {
         
         notifications = getNotification();
