@@ -6,42 +6,30 @@ import Buttons from './Buttons';
 import Notificaciones from './Notificaciones';
 import { ArmadoCarro, Admin} from './NavigationMaster';
 
-import { getPermissions } from '../../Redux/store'
+import { getPermissions, getNotification } from '../../Redux/store'
 
 class Administrador extends Component {
 
-    constructor(props){
-        super(props);
-        this.state={
-            notificaciones: 1
-        }
-    }
 
-    handleNotifications = () => {
-        this.setState({
-            notificaciones: this.state.notificaciones+1
-        })
-    }
 
     render(){
         user = getPermissions();
+                
     return (
+        
         <View style={{flex: 1, width: '100%'}}>
             <StatusBar hidden/>
             <NavigationBar 
                 navigationBarStyle={{backgroundColor:'#9e5abf',padding: 5,}}
                 componentLeft = {() => <Image source={require('../../Images/Recurso2mdpi.png')}
                                             style={{height:'100%',width:120,}} resizeMode='center'/>}
-                componentRight = {()=> <Notificaciones
-                    notifications={this.state.notificaciones}
-                    handleNotifications={this.handleNotifications}
+                componentRight = {()=> <Notificaciones      
+             
                 />}
             />
             {   
                 user === 'admin'?
-                    <Admin 
-                        notifications={this.state.notificaciones}
-                    />
+                    <Admin />
                 :   <ArmadoCarro />
             }
         </View>

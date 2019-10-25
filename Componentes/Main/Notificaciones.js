@@ -3,22 +3,19 @@ import {View, Text, StyleSheet, Button} from 'react-native'
 
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { Avatar, Badge, Icon, withBadge } from 'react-native-elements'
+import {getNotification} from '../../Redux/store'
+
+import {connect} from 'react-redux'
 
 class Notificaciones extends Component {
 
-    constructor(props){
-        super(props);
-
-        this.state = {
-            notifications: 0
-        }
-    }
-
+   
     
- 
-
+    
+    
     render() {
-        const {notifications} = this.props;
+        
+        notifications = getNotification();
         const BadgedIcon = withBadge(notifications)(Icon)
 
         return (
@@ -31,7 +28,7 @@ class Notificaciones extends Component {
                 /> */}
                 <BadgedIcon type="ionicon" name="ios-chatbubbles"
                 color="#fff" 
-                onPress={this.props.handleNotifications}
+    
                 />
                 <Ionicons
                     name="ios-person"
@@ -45,6 +42,7 @@ class Notificaciones extends Component {
 }
 
 export default Notificaciones;
+
 
 
 const styles = StyleSheet.create({

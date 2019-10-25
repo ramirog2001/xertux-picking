@@ -4,6 +4,7 @@ import {Text, View, TouchableOpacity,ScrollView,StyleSheet,Alert,Image} from 're
 import Ionicons from '@expo/vector-icons/Ionicons'
 
 import RemitoItem from './RemitoItem'
+import {setNotification, getNotification} from '../../../../Redux/store.js'
 
 export default class RemitoModal extends Component {
     constructor(props){
@@ -20,9 +21,13 @@ export default class RemitoModal extends Component {
             isSelected: !this.state.isSelected
         })
     }
+
+    
  
 
     render() {
+   
+      
         return (
             <>
             <View style={{flexDirection:'row',width:'100%',flexWrap:'wrap',borderBottomWidth:.5,borderColor:'#767676'}}>
@@ -70,7 +75,10 @@ export default class RemitoModal extends Component {
 
                                           <View style={{width:'8%',flexDirection:'row'}}>
                                             <TouchableOpacity style={{backgroundColor:'#9e5abf',width:'100%',height:'70%',alignSelf:'center',borderRadius:50}}
-                                            
+                                              onPress={()=>{
+                                                setNotification(1)
+                                                console.log(getNotification())
+                                                 }}
                                             >
                                                 <Text style={{color:'#fff',textAlign:'center',padding: 5,}}>Seguir</Text>
                                             </TouchableOpacity>

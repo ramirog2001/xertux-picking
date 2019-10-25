@@ -3,6 +3,7 @@ import { createStore } from 'redux';
 const initState = {
   userPermission: '',
   userName: '',
+  notification: 0
 }
 
 
@@ -14,13 +15,21 @@ function myReducer(state = initState, action) {
         case 'USER_PERMISSIONS':
             return{
                 userPermission: action.userPermission,
-                userName: state.userName
+                userName: state.userName,
+                notification: state.notification
             }
             
         case 'USER_NAME':
             return{
                 userPermission: state.userPermission,
-                userName: action.userName
+                userName: action.userName,
+                notification: state.notification
+            }
+        case 'NOTIFICATION':
+            return {
+                userPermission: state.userPermission,
+                userName: state.userName,
+                notification: state.notification + action.notification
             }
             
     
@@ -30,6 +39,16 @@ function myReducer(state = initState, action) {
  }
 
 
+//Notificationes
+export let setNotification = (notification) => {
+    const notificationxd = {type: 'NOTIFICATION', notification}
+    store.dispatch(notificationxd)
+}
+export let getNotification = ()=>{
+    return(store.getState().notification)
+}
+
+//Permissions
 export let setPermissions = (userPermission) => { 
     const permissions = {type: 'USER_PERMISSIONS', userPermission}
     store.dispatch(permissions)
