@@ -16,12 +16,11 @@ export default class RemitoModal extends Component {
 
     abrirRemito = () => {
 
-        
         this.setState({
             isSelected: !this.state.isSelected
         })
     }
-    
+ 
 
     render() {
         return (
@@ -70,7 +69,9 @@ export default class RemitoModal extends Component {
 
 
                                           <View style={{width:'8%',flexDirection:'row'}}>
-                                            <TouchableOpacity style={{backgroundColor:'#9e5abf',width:'100%',height:'70%',alignSelf:'center',borderRadius:50}}>
+                                            <TouchableOpacity style={{backgroundColor:'#9e5abf',width:'100%',height:'70%',alignSelf:'center',borderRadius:50}}
+                                            
+                                            >
                                                 <Text style={{color:'#fff',textAlign:'center',padding: 5,}}>Seguir</Text>
                                             </TouchableOpacity>
                                           </View>

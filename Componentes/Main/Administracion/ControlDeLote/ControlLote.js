@@ -189,10 +189,11 @@ export default class ControlLote extends Component{
 
     }
   
- 
+    
      
     render(){
-
+        
+        console.log(this.props);
         return (
             <>
                 <Buttons navigation = {this.props.navigation}/>
@@ -203,9 +204,11 @@ export default class ControlLote extends Component{
                                <RemitoModal
                                key={lote.NroLote}
                                lote={lote}
+                                
                                />
-                            ))
-                        }
+                               
+                               ))
+                            }
                     </ScrollView>
                 </View>
             </>
