@@ -17,8 +17,8 @@ class Notificaciones extends Component {
 
     render() {
         
-        notifications = getNotification();
-        const BadgedIcon = withBadge(notifications)(Icon)
+     
+        const BadgedIcon = withBadge(this.props.notificaciones)(Icon)
 
         return (
             <View style={{width:'80%',flexDirection: 'row', justifyContent:'flex-end',flexWrap:'wrap'}}>
