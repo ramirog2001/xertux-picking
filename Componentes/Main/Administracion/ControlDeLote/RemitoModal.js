@@ -77,7 +77,7 @@ export default class RemitoModal extends Component {
                                             <TouchableOpacity style={{backgroundColor:'#9e5abf',width:'100%',height:'70%',alignSelf:'center',borderRadius:50}}
                                               onPress={()=>{
                                                 setNotification(1)
-                                                console.log(getNotification())
+                                                
                                                  }}
                                             >
                                                 <Text style={{color:'#fff',textAlign:'center',padding: 5,}}>Seguir</Text>

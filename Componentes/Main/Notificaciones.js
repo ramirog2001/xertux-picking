@@ -12,7 +12,9 @@ import {connect} from 'react-redux'
 class Notificaciones extends Component {
 
 
-
+    componentWillReceiveProps(){
+        this.forceUpdate();
+    }
 
 
     render() {
@@ -35,6 +37,7 @@ class Notificaciones extends Component {
                 <Ionicons
                     name="ios-person"
                     size={34}
+                
                     style={{marginLeft:30,marginRight: 25,paddingHorizontal: 15,paddingVertical: 5, borderRadius: 14, backgroundColor: '#999999'}}
                 />
       
