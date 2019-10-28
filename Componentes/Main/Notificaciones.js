@@ -12,9 +12,7 @@ import {connect} from 'react-redux'
 class Notificaciones extends Component {
 
 
-    componentWillReceiveProps(){
-        this.forceUpdate();
-    }
+    
 
 
     render() {
