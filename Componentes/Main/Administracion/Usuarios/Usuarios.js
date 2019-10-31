@@ -5,10 +5,17 @@ import Buttons from '../../Buttons';
 import Item from './Item';
 import Axios from 'axios';
 
+
 const uuid = require('uuid/v1');
 class Usuarios extends Component {
     state  = {
-        data: [],
+        data: {
+            user_fullname:'jotauno ',
+            user_name:'cd',
+            user_email:'fsd',
+            user_password:'xds',
+            user_type:'fsd',
+        },
         isVisibleAdd: false,
         isVisibleModify: false,
         users: []
@@ -28,25 +35,27 @@ class Usuarios extends Component {
     }
 
 
-    // addUser(){
-    //     let userID = uuid();
-    //     this.setState(({user: {id: userID, Usuario: '', Nombre: '', Email: '', Roles: ''}}));
-    //     this.setState({isVisibleAdd: true})
-    // }
+     addUser(){
+        this.setState({isVisibleAdd: true})
+     }
 
-    // async addUserAccept(){
-    //     console.log("enter to useraccept")
-    //     this.setState({isVisibleAdd: false})
-    //     Axios.post('http://192.0.99.122:3000/posts', this.state.user)
-    //     .then(res => console.log(res)).then(this.getData())
-    // }
+    async addUserAccept(){
+       console.log("enter to useraccept")
+       console.log(this.state.data);
+       
+      this.setState({isVisibleAdd: false})
+        Axios.post('http://192.0.99.131:3000/user/add', this.state.data)
+        .then(res => console.log(res)).then(this.getData())
+     }
 
-    // removeUser = (id) => {
+    removeUser = (id) => {
 
-    //     Axios.delete('http://192.0.99.122:3000/posts/' + id)
-    //     .then(res => res = 200 ? this.getData() : console.log("Server fail", res.status))
+       Axios.delete('http://192.0.99.131:3000/user/' + id)
+        .then(res => res = 200 ? this.getData() : console.log("Server fail", res.status))
 
-    // }
+        console.log('http://192.0.99.131/:3000/user/'+id);
+        
+     }
 
     // editUser(id){
     //     a = this.state.data.filter(x => x.id = id);
@@ -78,7 +87,7 @@ class Usuarios extends Component {
              <ScrollView style={{flex: 1, backgroundColor: '#f6f6f6'}}>
               <FlatList 
                      data= {this.state.users}
-                     renderItem = {({item}) => <Item Usuario = {item.user_name} Nombre = {item.user_fullname} Email = {item.user_email} Roles = {item.user_type} id = {item._id} />}
+                     renderItem = {({item}) => <Item Usuario = {item.user_name} Nombre = {item.user_fullname} Email = {item.user_email} Delete={this.removeUser} Roles = {item.user_type} id = {item._id} />}
                      keyExtractor={(item)=>item._id}
                  /> 
              </ScrollView>
@@ -94,49 +103,54 @@ class Usuarios extends Component {
                 isVisible = {this.state.isVisibleAdd} onBackdropPress = {() => this.setState({isVisibleAdd: false})}>
                 <>
                     <Text>Añadir Usuario</Text>
-                    <Text>Usuario</Text>
-                    <TextInput style = {{backgroundColor: "violet"}}
-                     //onChangeText = {(text) => this.setState(prevState => ({user: { ...prevState.user, Usuario: text}}))} 
-                     ></TextInput>
                     <Text>Nombre</Text>
                     <TextInput style = {{backgroundColor: "violet"}}
-                   // onChangeText = {(text) => this.setState(prevState => ({user: { ...prevState.user, Nombre: text}}))}
+                    onChangeText = {(text) => this.setState(prevState => ({data: { ...prevState.data,user_fullname: text}}))}
+                    ></TextInput>
+                    <Text>Usuario</Text>
+                    <TextInput style = {{backgroundColor: "violet"}}
+                     onChangeText = {(text) => this.setState(prevState => ({data: { ...prevState.data, user_name: text}}))} 
+                     ></TextInput>
+                     <Text>Contraseña</Text>
+                    <TextInput style = {{backgroundColor: "violet"}} 
+                       onChangeText = {(text) => this.setState(prevState => ({data: { ...prevState.data, user_password: text}}))} 
                     ></TextInput>
                     <Text>Email</Text>
                     <TextInput style = {{backgroundColor: "violet"}}
-                     //onChangeText = {(text) => this.setState(prevState => ({user: { ...prevState.user, Email: text}}))}
+                     onChangeText = {(text) => this.setState(prevState => ({data: { ...prevState.data, user_email: text}}))}
                       ></TextInput>
                     <Text>Roles</Text>
                     <TextInput style = {{backgroundColor: "violet"}} 
-                        //onChangeText = {(text) => this.setState(prevState => ({user: { ...prevState.user, Roles: text}}))} 
+                       onChangeText = {(text) => this.setState(prevState => ({data: { ...prevState.data, user_type: text}}))} 
                     ></TextInput>
+                   
                     <TouchableOpacity
-                       // onPress = {() => this.addUserAccept()}
+                      onPress = {() => this.addUserAccept()}
                         style={{padding: 5, borderWidth: 1, backgroundColor:'#ce65fd', borderRadius:20, elevation:6, marginTop: 5}}>
                     <Text style={{textAlign:'center',color:'#fff',fontSize:20,padding: 5,}}>añadir</Text>
                     </TouchableOpacity>
                 </>
             </Overlay>
-            {/* <Overlay 
+         <Overlay 
                 width = "80%"
                 height = "auto"    
                 isVisible = {this.state.isVisibleModify} onBackdropPress = {() => this.setState({isVisibleModify: false})}>
             <>    
                 <Text>Editar Usuario</Text>
                 <Text>ID</Text>
-               <Text>{this.state.user.id}</Text> 
+             {/* <Text>{this.state.user.id}</Text>  */}
                 <Text>Usuario</Text>
                 <TextInput style = {{backgroundColor: 'violet'}}
-                 onChangeText = {(text) => this.setState(prevState => ({user: { ...prevState.user, Usuario: text}}))}>{this.state.user.Usuario}</TextInput>
+                 onChangeText = {(text) => this.setState(prevState => ({data: { ...prevState.data,  user_name: text}}))}>{this.state.data.user_name}</TextInput>
                 <Text>Nombre</Text>
-                <TextInput style = {{backgroundColor: 'violet'}} onChangeText = {(text) => this.setState(prevState => ({user: {...prevState.user, Nombre: text}}))} >{this.state.user.Nombre}</TextInput>
+                <TextInput style = {{backgroundColor: 'violet'}} onChangeText = {(text) => this.setState(prevState => ({data: {...prevState.data, user_fullname: text}}))} >{this.state.data.user_fullname}</TextInput>
                 <Text>Email</Text>
-                <TextInput style = {{backgroundColor: 'violet'}} onChangeText = {(text) => this.setState(prevState => ({user: {...prevState.user, Email: text }}))} >{this.state.user.Email}</TextInput>
+                <TextInput style = {{backgroundColor: 'violet'}} onChangeText = {(text) => this.setState(prevState => ({data: {...prevState.data, user_email: text }}))} >{this.state.data.user_email}</TextInput>
                 <Text>Roles</Text>
-                <TextInput style = {{backgroundColor: 'violet'}} onChangeText = {(text) => this.setState(prevState => ({user: {...prevState.user, Roles: text}}))} >{this.state.user.Roles}</TextInput>
+                <TextInput style = {{backgroundColor: 'violet'}} onChangeText = {(text) => this.setState(prevState => ({data: {...prevState.data, user_type: text}}))} >{this.state.data.user_type}</TextInput>
                 <Button title="Aceptar" onPress = {() => this.acceptEdit()}/>
             </> 
-            </Overlay> */}
+            </Overlay> 
         </>
     );
     } 
