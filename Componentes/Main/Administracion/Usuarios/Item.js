@@ -36,9 +36,13 @@ const Items = ({Usuario, Nombre, Email, Roles, Modificar, Delete, id}) => {
                 <Text numberOfLines = {1}>
                     Roles
                 </Text>
-                <Text numberOfLines = {1}>
-                    {Roles}
-                </Text>
+
+                {Roles.map((item)=>(
+                    <Text key={item._id} numberOfLines = {1}>
+                        {item.type_description}
+                    </Text>
+                ))}
+                
                 
             </View>
             <TouchableOpacity
