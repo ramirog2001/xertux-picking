@@ -2,15 +2,15 @@ import React from 'react';
 import { Text } from 'react-native';
 import Buttons from '../Buttons';
 
-const Informes = (props) => {
+const ArmadoCarro = (props) => {
     return (
         <>
         <Buttons navigation = {props.navigation}/>
         <Text>
-            Informes
+            ArmadoCarro
         </Text>
         </>
     );
 };
 
-export default Informes;
+export default ArmadoCarro;
